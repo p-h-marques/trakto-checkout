@@ -7,6 +7,10 @@ const PaymentTicket = () => {
     const paymentType = 'paymentTicket'
     const { state, dispatch } = useContext(Context)
 
+    /**
+     * Trocando método de pagamento no
+     * objeto de estado global
+     */
     const handleChangePaymentType = useCallback(type => {
         if(type !== state.plan.payment)
             dispatch(actions.updatePaymentType(type))
