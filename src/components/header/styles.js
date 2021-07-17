@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import colors from '../../styles/colors'
+import container from '../../styles/container'
 import shadows from '../../styles/shadows'
 
 export const HeaderStyles = styled.header`
@@ -9,11 +10,9 @@ export const HeaderStyles = styled.header`
     justify-content: center;
 
     div.container{
-        max-width: 966px;
-        width: 100%;
+        ${container}
         display: flex;
         justify-content: space-between;
-        margin: 0px 20px;
     }
 
     div.logo img{

@@ -13,6 +13,15 @@ const Checkout = () => {
     return (
         <CheckoutStyles>
             <Header />
+
+            <main>
+                <div className="container">
+                    <div className="grid">
+                        <div>Métodos de Pagamento</div>
+                        <div>Resumo da Compra</div>
+                    </div>
+                </div>
+            </main>
         </CheckoutStyles>
     )
 }
