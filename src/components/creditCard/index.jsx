@@ -13,13 +13,6 @@ const CreditCard = () => {
     /**
      * Atualiza as informações de cadastro do usuário
      */
-    const handleUpdateUserInfo = useCallback((type, value) => {
-        dispatch(actions.updateUserInfo(type, value))
-    }, [state.user])
-
-    /**
-     * Atualiza as informações de cadastro do usuário
-     */
     const handleUpdateCardInfo = useCallback((type, value) => {
         dispatch(actions.updateCardInfo(type, value))
     }, [state.creditCard])
@@ -29,10 +22,10 @@ const CreditCard = () => {
             <div className="big">
                 <Input
                     label="Nome no Cartão"
-                    placeholder="Digite seu nome completo"
-                    value={state.user.name}
+                    placeholder="Digite seu nome como está no cartão"
+                    value={state.creditCard.name}
                     onChange={e => {
-                        handleUpdateUserInfo('name', e.target.value)
+                        handleUpdateCardInfo('name', e.target.value)
                     }}
                 />
             </div>

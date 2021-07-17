@@ -17,6 +17,7 @@ export const initialState = {
         state: ''
     },
     creditCard: {
+        name: '',
         number: '',
         expiration: '',
         securityCode: ''

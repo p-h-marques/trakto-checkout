@@ -1,17 +1,20 @@
 import React from 'react'
 import { RadioPaymentStyles } from './styles'
 
-const RadioPayment = ({paymentType, label, onClick, checked}) => {
+const RadioPayment = ({paymentType, label, tag, onClick, checked}) => {
     return (
         <RadioPaymentStyles
             htmlFor={paymentType}
             onClick={onClick}
         >
             {label}
+            {
+                tag !== undefined && (<span className="tag">{tag}</span>)
+            }
             <input type="radio" name="paymenttype" id={paymentType}
                 checked={checked} onChange={onClick}
             />
-            <span></span>
+            <span className="fake"></span>
         </RadioPaymentStyles>
     )
 }

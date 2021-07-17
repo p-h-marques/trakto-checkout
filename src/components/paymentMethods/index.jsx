@@ -41,6 +41,7 @@ const PaymentMethods = () => {
                 <RadioPayment
                     paymentType="paymentTicket"
                     label="Boleto Bancário"
+                    tag="Apenas para Anual"
                     checked={state.plan.payment === 'paymentTicket'}
                     onClick={
                         ()=>{handleChangePaymentType('paymentTicket')}
