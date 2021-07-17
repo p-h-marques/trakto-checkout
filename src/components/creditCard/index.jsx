@@ -26,7 +26,7 @@ const CreditCard = () => {
 
     return (
         <CreditCardStyles className="border">
-            <div>
+            <div className="big">
                 <Input
                     label="Nome no Cartão"
                     placeholder="Digite seu nome completo"
@@ -37,7 +37,7 @@ const CreditCard = () => {
                 />
             </div>
 
-            <div>
+            <div className="big">
                 <Input
                     label="Dados do Cartão"
                     placeholder="Número do Cartão"
@@ -45,6 +45,28 @@ const CreditCard = () => {
                     value={state.creditCard.number}
                     onChange={e => {
                         handleUpdateCardInfo('number', e.target.value)
+                    }}
+                />
+            </div>
+
+            <div className="shortl">
+                <Input
+                    label="Validade"
+                    placeholder="MM/AA"
+                    value={state.creditCard.expiration}
+                    onChange={e => {
+                        handleUpdateCardInfo('expiration', e.target.value)
+                    }}
+                />
+            </div>
+
+            <div className="shortr">
+                <Input
+                    label="CCV"
+                    placeholder="***"
+                    value={state.creditCard.securityCode}
+                    onChange={e => {
+                        handleUpdateCardInfo('securityCode', e.target.value)
                     }}
                 />
             </div>

@@ -18,9 +18,8 @@ export const initialState = {
     },
     creditCard: {
         number: '',
-        expirationMonth: '',
-        expirationYear: '',
-        secutiryCode: ''
+        expiration: '',
+        securityCode: ''
     },
     plan: {
         name: 'Plano Pro',

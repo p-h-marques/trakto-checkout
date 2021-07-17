@@ -17,4 +17,12 @@ export const CheckoutStyles = styled.div`
         grid-template-columns: 7fr 5fr;
         gap: 20px;
     }
+
+    @media(max-width: 991px){
+        div.grid{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
 `
