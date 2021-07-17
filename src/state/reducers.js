@@ -2,12 +2,12 @@ import * as types from './types'
 
 function reducer(state, action) {
     switch (action.type) {
-        case types.SIMPLE_UPDATE:
+        case types.UPDATE_PAYMENT_TYPE:
             return {
                 ...state,
-                main: {
-                    ...state.main,
-                    data: action.payload
+                plan: {
+                    ...state.plan,
+                    payment: action.payload
                 }
             }
 

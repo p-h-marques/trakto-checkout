@@ -1,14 +1,14 @@
 import * as types from './types'
 
 /**
- * Action para update simples
+ * Atualiza a forma de pagamento a ser utilizada
  *
- * @param {boolean} data
- * @returns
+ * @param {string} type Tipo de pagamento selecionado
+ * @returns {type, payload}
  */
-export function simpleUpdate(data){
+export function updatePaymentType(type){
     return {
-        type: types.SIMPLE_UPDATE,
-        payload: data,
+        type: types.UPDATE_PAYMENT_TYPE,
+        payload: type,
     }
 }

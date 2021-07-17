@@ -2,13 +2,14 @@ import React, {useContext, useEffect} from 'react'
 import { CheckoutStyles } from './styles'
 import Context from '../../state/Context'
 import Header from '../../components/header'
+import PaymentMethods from '../../components/paymentMethods'
 
 const Checkout = () => {
     const {state} = useContext(Context)
 
     useEffect(()=>{
         console.log(state)
-    }, [])
+    }, [state])
 
     return (
         <CheckoutStyles>
@@ -17,7 +18,7 @@ const Checkout = () => {
             <main>
                 <div className="container">
                     <div className="grid">
-                        <div>Métodos de Pagamento</div>
+                        <PaymentMethods />
                         <div>Resumo da Compra</div>
                     </div>
                 </div>
