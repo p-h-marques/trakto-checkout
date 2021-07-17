@@ -4,8 +4,32 @@ import reducer from './reducers'
 
 
 export const initialState = {
-    main: {
-        data: true
+    user: {
+        name: '',
+        document: '',
+        phone: '',
+        postalCode: '',
+        street: '',
+        number: '',
+        neighborhood: '',
+        complement: '',
+        city: '',
+        state: ''
+    },
+    creditCard: {
+        number: '',
+        expirationMonth: '',
+        expirationYear: '',
+        secutiryCode: ''
+    },
+    plan: {
+        name: 'Plano Pro',
+        value: {
+            monthly: 25.5,
+            anual: 150
+        },
+        recurrence: 'monthly',
+        payment: 'creditCard'
     }
 }
 
