@@ -6,6 +6,12 @@ const colors = {
     },
     background: {
         snow: '#FCFCFE',
+    },
+    neutral: {
+        white: '#FFFFFF',
+        light: '#E4EBFB',
+        clear: '#D0DAEF',
+        darkest: '#04183E',
     }
 }
 
