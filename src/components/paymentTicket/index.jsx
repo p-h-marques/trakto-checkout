@@ -3,7 +3,7 @@ import { PaymentTicketStyles } from './styles'
 
 const PaymentTicket = () => {
     return (
-        <PaymentTicketStyles>
+        <PaymentTicketStyles className="border">
             recheio do boleto
         </PaymentTicketStyles>
     )

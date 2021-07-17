@@ -3,6 +3,7 @@ const colors = {
         trakto: '#0095FF',
         traktoLight: '#66BFFF',
         traktoDark: '#0077CC',
+        orange: '#FE6E46',
     },
     background: {
         snow: '#FCFCFE',

@@ -12,3 +12,19 @@ export function updatePaymentType(type){
         payload: type,
     }
 }
+
+/**
+ * Atualiza as informações de cadastro do usuário
+ *
+ * @param {string} key Campo a ser atualizado
+ * @param {string} value Valor a ser atualizado
+ * @returns {object}
+ */
+export function updateUserInfo(key, value){
+    return {
+        type: types.UPDATE_USER_INFO,
+        payload: {
+            [key]: value
+        }
+    }
+}

@@ -11,7 +11,7 @@ export const PaymentContainerStyles = styled.div`
     border-radius: 4px;
     box-shadow: ${shadows.lg};
 
-    div{
+    div.border{
         padding-top: 24px;
         border-top: 1px solid ${colors.neutral.light};
         margin-top: 16px;

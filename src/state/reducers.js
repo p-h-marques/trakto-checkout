@@ -11,6 +11,15 @@ function reducer(state, action) {
                 }
             }
 
+        case types.UPDATE_USER_INFO:
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    ...action.payload
+                }
+            }
+
         default:
             throw new Error()
     }
