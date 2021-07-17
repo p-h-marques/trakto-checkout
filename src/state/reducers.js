@@ -20,6 +20,15 @@ function reducer(state, action) {
                 }
             }
 
+        case types.UPDATE_CARD_INFO:
+            return {
+                ...state,
+                creditCard: {
+                    ...state.creditCard,
+                    ...action.payload
+                }
+            }
+
         default:
             throw new Error()
     }

@@ -14,7 +14,7 @@ export const CheckoutStyles = styled.div`
 
     div.grid{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 7fr 5fr;
         gap: 20px;
     }
 `

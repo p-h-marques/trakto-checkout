@@ -28,3 +28,19 @@ export function updateUserInfo(key, value){
         }
     }
 }
+
+/**
+ * Atualiza as informações do cartão do usuário
+ *
+ * @param {string} key Campo a ser atualizado
+ * @param {string} value Valor a ser atualizado
+ * @returns {object}
+ */
+export function updateCardInfo(key, value){
+    return {
+        type: types.UPDATE_CARD_INFO,
+        payload: {
+            [key]: value
+        }
+    }
+}
