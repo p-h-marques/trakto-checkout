@@ -3,9 +3,6 @@ import colors from '../../styles/colors'
 
 export const RadioPaymentStyles = styled.label`
     width: 100%;
-    padding-bottom: 24px;
-    border-bottom: 1px solid ${colors.neutral.light};
-    margin-bottom: 16px;
     display: flex;
     gap: 8px;
     align-items: center;

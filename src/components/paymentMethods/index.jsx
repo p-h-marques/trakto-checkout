@@ -34,7 +34,7 @@ const PaymentMethods = () => {
                     }
                 />
 
-                <CreditCard />
+                {state.plan.payment === 'creditCard' && (<CreditCard />)}
             </PaymentContainer>
 
             <PaymentContainer>
@@ -47,7 +47,7 @@ const PaymentMethods = () => {
                     }
                 />
 
-                <PaymentTicket />
+                {state.plan.payment === 'paymentTicket' && (<PaymentTicket />)}
             </PaymentContainer>
 
         </PaymentMethodsStyles>
