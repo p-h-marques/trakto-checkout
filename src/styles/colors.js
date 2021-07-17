@@ -1,6 +1,12 @@
 const colors = {
-    light: '#18ACC4',
-    background: '#CACCCE',
+    brand: {
+        trakto: '#0095FF',
+        traktoLight: '#66BFFF',
+        traktoDark: '#0077CC',
+    },
+    background: {
+        snow: '#FCFCFE',
+    }
 }
 
 export default colors
