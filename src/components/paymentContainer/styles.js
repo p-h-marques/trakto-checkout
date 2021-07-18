@@ -25,25 +25,71 @@ export const PaymentContainerStyles = styled.div`
 
         div.big {
             grid-column: 1/13;
+            align-self: center;
+        }
+
+        div.largel {
+            grid-column: 1/11;
+            align-self: center;
+        }
+
+        div.mediuml{
+            grid-column: 1/7;
+            align-self: center;
+        }
+
+        div.mediumr{
+            grid-column: 7/13;
+            align-self: center;
         }
 
         div.shortl {
             grid-column: 1/5;
+            align-self: center;
+        }
+
+        div.shortm {
+            grid-column: 5/9;
+            align-self: center;
         }
 
         div.shortr {
             grid-column: 9/13;
+            align-self: center;
+        }
+
+        div.smallr{
+            grid-column: 11/13;
+            align-self: center;
         }
     }
 
+    div.divider{
+        grid-column: 1/13;
+        border-bottom: 1px solid ${colors.neutral.light};
+    }
 
     @media(max-width: 575px){
-        div.shortl {
-            grid-column: 1/7;
-        }
+        div.grid{
+            div.largel {
+                grid-column: 1/13;
+            }
 
-        div.shortr {
-            grid-column: 7/13;
+            div.mediuml, div.mediumr{
+                grid-column: 1/13;
+            }
+
+            div.shortr, div.shortm {
+                grid-column: 7/13;
+            }
+
+            div.shortl {
+                grid-column: 1/7;
+            }
+
+            div.smallr{
+                grid-column: 1/13;
+            }
         }
     }
 `
