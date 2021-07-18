@@ -21,6 +21,7 @@ const CreditCard = () => {
         <CreditCardStyles className="border grid">
             <div className="big">
                 <Input
+                    code="cardName"
                     label="Nome no Cartão"
                     placeholder="Digite seu nome como está no cartão"
                     value={state.creditCard.name}
@@ -32,6 +33,7 @@ const CreditCard = () => {
 
             <div className="big">
                 <Input
+                    code="cardNumber"
                     label="Dados do Cartão"
                     placeholder="Número do Cartão"
                     placeholderImg={ImgCard}
@@ -44,6 +46,7 @@ const CreditCard = () => {
 
             <div className="shortl">
                 <Input
+                    code="cardExpiration"
                     label="Validade"
                     placeholder="MM/AA"
                     value={state.creditCard.expiration}
@@ -55,6 +58,7 @@ const CreditCard = () => {
 
             <div className="shortr">
                 <Input
+                    code="cardSecurityNumber"
                     label="CCV"
                     placeholder="***"
                     value={state.creditCard.securityCode}

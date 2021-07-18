@@ -13,7 +13,7 @@ export const initialState = {
         number: '',
         neighborhood: '',
         complement: '',
-        city: '',
+        city: 'UF',
         state: '',
         terms: false
     },

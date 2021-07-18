@@ -39,4 +39,18 @@ export const InputStyles = styled.div`
                 border-color: ${colors.brand.trakto};
             }
         }
+
+        select {
+            border: 1px solid ${colors.neutral.light};
+            border-radius: 4px;
+            background-color: transparent!important;
+            width: 100%;
+            font-size: 14px;
+            color: ${colors.neutral.darkest};
+            padding: 12px 16px;
+
+            &:focus{
+                border-color: ${colors.brand.trakto};
+            }
+        }
 `

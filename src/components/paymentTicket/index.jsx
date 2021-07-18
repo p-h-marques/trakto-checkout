@@ -2,6 +2,7 @@ import React, {useCallback, useContext} from 'react'
 import { PaymentTicketStyles } from './styles'
 
 import Input from '../input'
+import Select from '../select'
 
 import Context from '../../state/Context'
 import * as actions from '../../state/actions'
@@ -20,6 +21,7 @@ const PaymentTicket = () => {
         <PaymentTicketStyles className="border grid">
             <div className="big">
                 <Input
+                    code="userName"
                     label="Nome Completo"
                     placeholder="Digite seu nome completo"
                     value={state.user.name}
@@ -31,6 +33,7 @@ const PaymentTicket = () => {
 
             <div className="mediuml">
                 <Input
+                    code="userDocument"
                     label="CPF / CNPJ"
                     placeholder="CPF / CNPJ"
                     value={state.user.document}
@@ -42,6 +45,7 @@ const PaymentTicket = () => {
 
             <div className="mediumr">
                 <Input
+                    code="userPhone"
                     label="Telefone"
                     placeholder="(88) 8888-8888"
                     value={state.user.phone}
@@ -55,6 +59,7 @@ const PaymentTicket = () => {
 
             <div className="shortl">
                 <Input
+                    code="userPostalCode"
                     label="CEP"
                     placeholder="XXXXX-XXX"
                     value={state.user.postalCode}
@@ -76,6 +81,7 @@ const PaymentTicket = () => {
 
             <div className="largel">
                 <Input
+                    code="userStreet"
                     label="Rua / Avenida"
                     placeholder="Ex. Av. Anderson Magalhães Teixeira"
                     value={state.user.street}
@@ -87,6 +93,7 @@ const PaymentTicket = () => {
 
             <div className="smallr">
                 <Input
+                    code="userNumber"
                     label="Número"
                     placeholder="N"
                     value={state.user.number}
@@ -98,6 +105,7 @@ const PaymentTicket = () => {
 
             <div className="mediuml">
                 <Input
+                    code="userNeighborhood"
                     label="Bairro"
                     placeholder="Bairro"
                     value={state.user.neighborhood}
@@ -109,6 +117,7 @@ const PaymentTicket = () => {
 
             <div className="mediumr">
                 <Input
+                    code="userComplement"
                     label="Complemento"
                     placeholder="Bloco, Apartamento"
                     value={state.user.complement}
@@ -120,6 +129,7 @@ const PaymentTicket = () => {
 
             <div className="mediuml">
                 <Input
+                    code="userCity"
                     label="Cidade"
                     placeholder="Cidade"
                     value={state.user.city}
@@ -130,7 +140,8 @@ const PaymentTicket = () => {
             </div>
 
             <div className="mediumr">
-                <Input
+                <Select
+                    code="userState"
                     label="Estado"
                     placeholder="UF"
                     value={state.user.state}
@@ -143,6 +154,7 @@ const PaymentTicket = () => {
             <div className="big">
                 <label className="checkbox">
                     <input
+                        code="userTerms"
                         type="checkbox"
                         name="terms"
                         id="terms"
