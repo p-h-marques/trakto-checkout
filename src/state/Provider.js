@@ -13,8 +13,8 @@ export const initialState = {
         number: '',
         neighborhood: '',
         complement: '',
-        city: 'UF',
-        state: '',
+        city: '',
+        state: 'UF',
         terms: false
     },
     creditCard: {

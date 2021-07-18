@@ -15,7 +15,6 @@ const Select = ({label, code, value, onChange}) => {
             <select
                 name={code}
                 id={code}
-                defaultValue="UF"
                 value={value}
                 onChange={onChange}
             >
