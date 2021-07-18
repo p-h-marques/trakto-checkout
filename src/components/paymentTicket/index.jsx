@@ -139,6 +139,23 @@ const PaymentTicket = () => {
                     }}
                 />
             </div>
+
+            <div className="big">
+                <label className="checkbox">
+                    <input
+                        type="checkbox"
+                        name="terms"
+                        id="terms"
+                        checked={state.user.terms}
+                        onChange={e => {
+                            handleUpdateUserInfo('terms', e.target.checked)
+                        }}
+                    />
+                    <span>Concordar com os&nbsp;
+                        <a>Termos de Uso</a>.
+                    </span>
+                </label>
+            </div>
         </PaymentTicketStyles>
     )
 }

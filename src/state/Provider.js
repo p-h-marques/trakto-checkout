@@ -14,7 +14,8 @@ export const initialState = {
         neighborhood: '',
         complement: '',
         city: '',
-        state: ''
+        state: '',
+        terms: false
     },
     creditCard: {
         name: '',
