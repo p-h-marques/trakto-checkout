@@ -11,14 +11,14 @@ const CreditCard = () => {
     const { state, dispatch } = useContext(Context)
 
     /**
-     * Atualiza as informações de cadastro do usuário
+     * Atualiza as informações do cartão do usuário
      */
     const handleUpdateCardInfo = useCallback((type, value) => {
         dispatch(actions.updateCardInfo(type, value))
     }, [state.creditCard])
 
     return (
-        <CreditCardStyles className="border">
+        <CreditCardStyles className="border grid">
             <div className="big">
                 <Input
                     label="Nome no Cartão"
