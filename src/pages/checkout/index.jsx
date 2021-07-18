@@ -3,7 +3,7 @@ import { CheckoutStyles } from './styles'
 import Context from '../../state/Context'
 import Header from '../../components/header'
 import PaymentMethods from '../../components/paymentMethods'
-import PlanInfo from '../../components/planInfo'
+import PaymentActions from '../../components/paymentActions'
 
 const Checkout = () => {
     const {state} = useContext(Context)
@@ -20,7 +20,7 @@ const Checkout = () => {
                 <div className="container">
                     <div className="grid">
                         <PaymentMethods />
-                        <PlanInfo />
+                        <PaymentActions />
                     </div>
                 </div>
             </main>
