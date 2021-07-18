@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import container from '../../styles/container'
 
 export const CheckoutStyles = styled.div`
+    padding-bottom: 80px;
+
     main{
         display: flex;
         justify-content: center;

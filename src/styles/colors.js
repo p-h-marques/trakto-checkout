@@ -4,6 +4,8 @@ const colors = {
         traktoLight: '#66BFFF',
         traktoDark: '#0077CC',
         orange: '#FE6E46',
+        green: '#1DC763',
+        greendDark: '#17944B',
     },
     background: {
         snow: '#FCFCFE',

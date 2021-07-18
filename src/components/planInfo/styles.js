@@ -29,12 +29,24 @@ export const PlanInfoStyles = styled.div`
                 padding: 12px 24px;
                 background-color: ${colors.neutral.light};
                 border-radius: 4px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: ${colors.neutral.clear};
+                }
 
                 span {
                     font-size: 14px;
                     line-height: 16px;
                     font-weight: 500;
                 }
+            }
+
+            @media(max-width: 575px){
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 16px;
             }
         }
 
@@ -124,6 +136,13 @@ export const PlanInfoStyles = styled.div`
                 span.value + span {
                     align-self: flex-end;
                 }
+            }
+
+            @media(max-width: 575px){
+                flex-direction: column-reverse;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 16px;
             }
         }
 

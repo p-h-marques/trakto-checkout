@@ -52,15 +52,6 @@ const PlanInfo = () => {
                     </div>
                 </div>
             </div>
-
-            {/* <div className="action">
-                <div className="button">
-                    assinar
-                </div>
-                <div className="description">
-                    pagamento seguro
-                </div>
-            </div> */}
         </PlanInfoStyles>
     )
 }

@@ -4,7 +4,7 @@ import { ButtonStyles } from './styles'
 const Button = () => {
     return (
         <ButtonStyles>
-            Botão
+            Assinar (R$ 25,50)
         </ButtonStyles>
     )
 }
