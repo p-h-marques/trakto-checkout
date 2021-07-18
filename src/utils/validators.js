@@ -42,6 +42,67 @@ function securityCodeValidator(value){
 }
 
 /**
+ * Formata documento CPF/CNPJ de acordo
+ * com o número de caracteres
+ *
+ * @param {string} value Documento a ser formatado
+ * @returns Valor após validação
+ */
+function documentValidator(value){
+    value = value.replace(/\D/g,'')
+
+    value.length <= 11
+        ? value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,'$1.$2.$3-$4')
+        : value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,'$1.$2.$3/$4-$5')
+
+    value = value.substring(0, 18)
+
+    return value
+}
+
+/**
+ * Formata número de telefone de acordo
+ * com o número de caracteres
+ * @param {string} value Telefone a ser formatado
+ * @returns Valor após validação
+ */
+function phoneValidator(value){
+    value = value.replace(/\D/g,'')
+    value = value.substring(0, 11)
+
+    value.length === 11
+        ? value = value.replace(/(\d{2})(\d{5})(\d{4})/g,'($1) $2-$3')
+        : value = value.replace(/(\d{2})(\d{4})(\d{4})/g,'($1) $2-$3')
+
+    return value
+}
+
+/**
+ * Formata CEP no formato 99999-999
+ *
+ * @param {string} value CEP a ser formatado
+ * @returns Valor após validação
+ */
+function postalCodeValidator(value){
+    value = value.replace(/\D/g,'')
+    value = value.replace(/(\d{5})/g, '$1-')
+    value = value.replace(/-$/, '')
+    value = value.substring(0, 9)
+
+    return value
+}
+
+/**
+ * Filtra apenas números
+ *
+ * @param {string} value Valor a ser filtrado
+ * @returns Apenas números
+ */
+function numberValidator(value){
+    return value.replace(/\D/g,'')
+}
+
+/**
  * Retorna uma função de validação conforme
  * o tipo de campo passado
  *
@@ -50,10 +111,14 @@ function securityCodeValidator(value){
  */
 export function getValidator(type){
     const validators = {
-        number: (value) => cardNumberValidator(value),
-        expiration: (value) => expirationValidator(value),
-        securityCode: (value) => securityCodeValidator(value),
-        default: (value) => value
+        number:         value => cardNumberValidator(value),
+        expiration:     value => expirationValidator(value),
+        securityCode:   value => securityCodeValidator(value),
+        document:       value => documentValidator(value),
+        phone:          value => phoneValidator(value),
+        postalCode:     value => postalCodeValidator(value),
+        streetNumber:   value => numberValidator(value),
+        default:        value => value
     }
 
     return validators[type] || validators['default']

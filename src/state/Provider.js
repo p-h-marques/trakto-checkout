@@ -10,7 +10,7 @@ export const initialState = {
         phone: '',
         postalCode: '',
         street: '',
-        number: '',
+        streetNumber: '',
         neighborhood: '',
         complement: '',
         city: '',

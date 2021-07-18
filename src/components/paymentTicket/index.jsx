@@ -6,15 +6,21 @@ import Select from '../select'
 
 import Context from '../../state/Context'
 import * as actions from '../../state/actions'
+import * as validators from '../../utils/validators'
 
 const PaymentTicket = () => {
     const { state, dispatch } = useContext(Context)
 
     /**
-     * Atualiza as informações de cadastro do usuário
+     * Atualiza as informações de cadastro do usuário,
+     * com base nas devidas validações disponíveis
      */
     const handleUpdateUserInfo = useCallback((type, value) => {
-        dispatch(actions.updateUserInfo(type, value))
+        let validatedData = validators.getValidator(type)(value)
+
+        if(validatedData !== state.creditCard[type]){
+            dispatch(actions.updateUserInfo(type, validatedData))
+        }
     }, [state.user])
 
     return (
@@ -96,9 +102,9 @@ const PaymentTicket = () => {
                     code="userNumber"
                     label="Número"
                     placeholder="N"
-                    value={state.user.number}
+                    value={state.user.streetNumber}
                     onChange={e => {
-                        handleUpdateUserInfo('number', e.target.value)
+                        handleUpdateUserInfo('streetNumber', e.target.value)
                     }}
                 />
             </div>
