@@ -44,3 +44,23 @@ export function updateCardInfo(key, value){
         }
     }
 }
+
+/**
+ * Atualiza as informações de endereço do
+ * usuário, provenientes da consulta do CEP
+ *
+ * @param {object} data Retorno da API ViaCep
+ * @returns {object}
+ */
+export function updateCep(data){
+    return {
+        type: types.UPDATE_CEP,
+        payload: {
+            postalCode: data.cep,
+            street: data.logradouro,
+            neighborhood: data.bairro,
+            city: data.localidade,
+            state: data.uf,
+        }
+    }
+}

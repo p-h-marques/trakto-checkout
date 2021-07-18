@@ -6,6 +6,7 @@ import Select from '../select'
 
 import Context from '../../state/Context'
 import * as actions from '../../state/actions'
+import * as requests from '../../utils/requests'
 import * as validators from '../../utils/validators'
 
 const PaymentTicket = () => {
@@ -69,8 +70,13 @@ const PaymentTicket = () => {
                     label="CEP"
                     placeholder="XXXXX-XXX"
                     value={state.user.postalCode}
-                    onChange={e => {
+                    onChange={async (e) => {
                         handleUpdateUserInfo('postalCode', e.target.value)
+
+                        if(e.target.value.length === 9){
+                            const fetchCep = await requests.fetchCep(e.target.value)
+                            if(fetchCep) dispatch(actions.updateCep(fetchCep))
+                        }
                     }}
                 />
             </div>

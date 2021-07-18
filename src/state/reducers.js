@@ -29,6 +29,15 @@ function reducer(state, action) {
                 }
             }
 
+        case types.UPDATE_CEP:
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    ...action.payload
+                }
+            }
+
         default:
             throw new Error()
     }
