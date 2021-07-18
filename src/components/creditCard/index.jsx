@@ -6,15 +6,21 @@ import ImgCard from '../../assets/images/input/card.svg'
 
 import Context from '../../state/Context'
 import * as actions from '../../state/actions'
+import * as validators from '../../utils/validators'
 
 const CreditCard = () => {
     const { state, dispatch } = useContext(Context)
 
     /**
-     * Atualiza as informações do cartão do usuário
+     * Atualiza as informações do cartão do usuário,
+     * com base nas devidas validações disponíveis
      */
     const handleUpdateCardInfo = useCallback((type, value) => {
-        dispatch(actions.updateCardInfo(type, value))
+        let validatedData = validators.getValidator(type)(value)
+
+        if(validatedData !== state.creditCard[type]){
+            dispatch(actions.updateCardInfo(type, validatedData))
+        }
     }, [state.creditCard])
 
     return (
