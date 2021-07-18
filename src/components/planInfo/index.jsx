@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { PlanInfoStyles } from './styles'
 
+import {formatingValue} from '../../utils/formats'
+import Context from '../../state/Context'
+import * as actions from '../../state/actions'
+
 const PlanInfo = () => {
+    const {state, dispatch} = useContext(Context)
+
     return (
         <PlanInfoStyles>
             <div className="ticket">
@@ -22,7 +28,7 @@ const PlanInfo = () => {
                             <p>Renovado anualmente</p>
                         </div>
                         <div className="value">
-                            R$ 25,50
+                            R$ {formatingValue(state.plan.value[state.plan.recurrence])}
                         </div>
                     </div>
                 </div>
@@ -31,15 +37,22 @@ const PlanInfo = () => {
 
                 <div className="payment">
                     <div className="setup">
-                        <select name="recurrence" id="recurrence">
-                            <option value="Mensal">Mensal</option>
-                            <option value="Anual">Anual</option>
+                        <select name="recurrence" id="recurrence"
+                            value={state.plan.recurrence}
+                            onChange={(e)=>{dispatch(actions.updateRecurrence(e.target.value))}}
+                        >
+                            <option value="monthly">Mensal</option>
+                            <option value="anual">Anual</option>
                         </select>
 
                         <div className="value">
                             <span>R$</span>
-                            <span className="value">25,50</span>
-                            <span>/Mês</span>
+                            <span className="value">
+                                {formatingValue(state.plan.value[state.plan.recurrence])}
+                            </span>
+                            <span>
+                                {state.plan.recurrence === 'monthly' ? '/Mês' : '/Ano'}
+                            </span>
                         </div>
                     </div>
 

@@ -64,3 +64,16 @@ export function updateCep(data){
         }
     }
 }
+
+/**
+ * Atualiza a recorrência selecionada pelo usuário
+ *
+ * @param {string} recurrence Tipo de recorrência selecionada
+ * @returns {object}
+ */
+export function updateRecurrence(recurrence){
+    return {
+        type: types.UPDATE_RECURRENCE,
+        payload: recurrence
+    }
+}

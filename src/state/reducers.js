@@ -38,6 +38,15 @@ function reducer(state, action) {
                 }
             }
 
+        case types.UPDATE_RECURRENCE:
+            return {
+                ...state,
+                plan: {
+                    ...state.plan,
+                    recurrence: action.payload
+                }
+            }
+
         default:
             throw new Error()
     }
