@@ -39,7 +39,7 @@ export const initialState = {
             planTerms: false
         }
     },
-    step: 'checkout'
+    step: 'success' //temp
 }
 
 
