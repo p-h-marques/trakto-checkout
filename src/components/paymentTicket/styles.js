@@ -20,13 +20,15 @@ export const PaymentTicketStyles = styled.div`
         padding-left: 8px;
         margin-top: 8px;
 
-        input{
-
-        }
-
         span{
             font-size: 14px;
             line-height: 16px;
+
+            &.error,
+            &.error a{
+                color: ${colors.brand.orange};
+                font-weight: 800;
+            }
 
             a{
                 font-size: 14px;

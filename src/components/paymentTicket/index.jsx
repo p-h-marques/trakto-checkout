@@ -235,10 +235,18 @@ const PaymentTicket = () => {
                         id="terms"
                         checked={state.user.terms}
                         onChange={e => {
+                            if(state.user.errors.includes('terms')){
+                                dispatch(
+                                    actions.removeError('user', 'terms', state.user.errors)
+                                )
+                            }
+
                             handleUpdateUserInfo('terms', e.target.checked)
                         }}
                     />
-                    <span>Concordar com os&nbsp;
+                    <span className={
+                        state.user.errors.includes('terms') ? 'error' : null
+                    }>Concordar com os&nbsp;
                         <a>Termos de Uso</a>.
                     </span>
                 </label>
