@@ -38,7 +38,8 @@ export const initialState = {
             paymentTicket: false,
             planTerms: false
         }
-    }
+    },
+    step: 'checkout'
 }
 
 

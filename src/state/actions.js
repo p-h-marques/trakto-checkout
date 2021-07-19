@@ -147,3 +147,17 @@ export function updatePlanErrors({hasError, type}){
         }
     }
 }
+
+/**
+ * Atualiza estado global conforme a etapa
+ * durante o checkout do usuário
+ *
+ * @param {string} step Etapa de checkout ou sucesso
+ * @returns {object}
+ */
+export function updatePaymentStatus({step}){
+    return {
+        type: types.UPDATE_PAYMENT_STATUS,
+        payload: step
+    }
+}

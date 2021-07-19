@@ -80,6 +80,12 @@ function reducer(state, action) {
                 }
             }
 
+        case types.UPDATE_PAYMENT_STATUS:
+            return {
+                ...state,
+                step: action.payload
+            }
+
         default:
             throw new Error()
     }

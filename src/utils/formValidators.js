@@ -99,5 +99,10 @@ export default function handleFormValidation(state){
         }
     }
 
-    return ('Permitir pagamento!')
+    return {
+        action: 'updatePaymentStatus',
+        args: {
+            step: 'success'
+        }
+    }
 }
