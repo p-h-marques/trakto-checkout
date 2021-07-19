@@ -14,6 +14,10 @@ export const InputStyles = styled.div`
             input{
                 caret-color: ${colors.brand.orange};
                 border-color: ${colors.brand.orange};
+
+                &:focus{
+                    border-color: ${colors.brand.orange};
+                }
             }
         }
 

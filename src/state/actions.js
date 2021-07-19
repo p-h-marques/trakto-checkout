@@ -107,3 +107,26 @@ export function updatePlanTerms(isAccepted){
         payload: isAccepted
     }
 }
+
+/**
+ * Atualiza a lista de erros de determinado método
+ * de pagamento, removendo um campo desejado
+ *
+ * @param {string} type Método de pagamento a ser interagido
+ * @param {string} error Campo que continha o erro
+ * @param {array} previous Lista de campos que continham erros anteriormente
+ * @returns {object}
+ */
+export function removeError(type, error, previous){
+    const index = previous.indexOf(error)
+
+    if (index > -1) previous.splice(index, 1)
+
+    return {
+        type: types.UPDATE_ERRORS,
+        payload: {
+            type,
+            newErrors: previous
+        }
+    }
+}
