@@ -4,15 +4,21 @@ import { ButtonStyles } from './styles'
 import {formatingValue} from '../../utils/formats'
 import handleFormValidation from '../../utils/formValidators'
 import Context from '../../state/Context'
-// import * as actions from '../../state/actions'
+import * as actions from '../../state/actions'
 
 const Button = () => {
-    const {state} = useContext(Context)
+    const {state, dispatch} = useContext(Context)
 
+    /**
+     * Inicia dinâmicas de validação para
+     * efetuar pagamento do plano
+     */
     const handlePayment = useCallback(()=>{
         const validation = handleFormValidation(state)
-        console.log(validation)
-        // dispatch(actions[validation.action](...validation.args))
+
+        if(validation.action === 'updateErrors'){
+            dispatch(actions[validation.action]({...validation.args}))
+        }
     }, [state])
 
     return (

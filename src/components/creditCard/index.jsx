@@ -31,6 +31,7 @@ const CreditCard = () => {
                     label="Nome no Cartão"
                     placeholder="Digite seu nome como está no cartão"
                     value={state.creditCard.name}
+                    hasError={state.creditCard.errors.includes('name')}
                     onChange={e => {
                         handleUpdateCardInfo('name', e.target.value)
                     }}
@@ -44,6 +45,7 @@ const CreditCard = () => {
                     placeholder="Número do Cartão"
                     placeholderImg={ImgCard}
                     value={state.creditCard.number}
+                    hasError={state.creditCard.errors.includes('number')}
                     onChange={e => {
                         handleUpdateCardInfo('number', e.target.value)
                     }}
@@ -56,6 +58,7 @@ const CreditCard = () => {
                     label="Validade"
                     placeholder="MM/AA"
                     value={state.creditCard.expiration}
+                    hasError={state.creditCard.errors.includes('expiration')}
                     onChange={e => {
                         handleUpdateCardInfo('expiration', e.target.value)
                     }}
@@ -68,6 +71,7 @@ const CreditCard = () => {
                     label="CCV"
                     placeholder="***"
                     value={state.creditCard.securityCode}
+                    hasError={state.creditCard.errors.includes('securityCode')}
                     onChange={e => {
                         handleUpdateCardInfo('securityCode', e.target.value)
                     }}

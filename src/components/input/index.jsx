@@ -1,10 +1,14 @@
 import React from 'react'
 import { InputStyles } from './styles'
 
-const Input = ({code, label, placeholder, placeholderImg, value, onChange}) => {
+const Input = ({
+    code, label, placeholder, placeholderImg,
+    value, onChange, hasError
+}) => {
     return (
         <InputStyles
             placeholderImg={placeholderImg}
+            className={hasError ? 'error' : null}
         >
             <label htmlFor={code}>{label}</label>
             <input

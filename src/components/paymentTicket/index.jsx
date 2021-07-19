@@ -32,6 +32,7 @@ const PaymentTicket = () => {
                     label="Nome Completo"
                     placeholder="Digite seu nome completo"
                     value={state.user.name}
+                    hasError={state.user.errors.includes('name')}
                     onChange={e => {
                         handleUpdateUserInfo('name', e.target.value)
                     }}
@@ -44,6 +45,7 @@ const PaymentTicket = () => {
                     label="CPF / CNPJ"
                     placeholder="CPF / CNPJ"
                     value={state.user.document}
+                    hasError={state.user.errors.includes('document')}
                     onChange={e => {
                         handleUpdateUserInfo('document', e.target.value)
                     }}
@@ -56,6 +58,7 @@ const PaymentTicket = () => {
                     label="Telefone"
                     placeholder="(88) 8888-8888"
                     value={state.user.phone}
+                    hasError={state.user.errors.includes('phone')}
                     onChange={e => {
                         handleUpdateUserInfo('phone', e.target.value)
                     }}
@@ -70,6 +73,7 @@ const PaymentTicket = () => {
                     label="CEP"
                     placeholder="XXXXX-XXX"
                     value={state.user.postalCode}
+                    hasError={state.user.errors.includes('postalCode')}
                     onChange={async (e) => {
                         handleUpdateUserInfo('postalCode', e.target.value)
 
@@ -97,6 +101,7 @@ const PaymentTicket = () => {
                     label="Rua / Avenida"
                     placeholder="Ex. Av. Anderson Magalhães Teixeira"
                     value={state.user.street}
+                    hasError={state.user.errors.includes('street')}
                     onChange={e => {
                         handleUpdateUserInfo('street', e.target.value)
                     }}
@@ -109,6 +114,7 @@ const PaymentTicket = () => {
                     label="Número"
                     placeholder="N"
                     value={state.user.streetNumber}
+                    hasError={state.user.errors.includes('streetNumber')}
                     onChange={e => {
                         handleUpdateUserInfo('streetNumber', e.target.value)
                     }}
@@ -121,6 +127,7 @@ const PaymentTicket = () => {
                     label="Bairro"
                     placeholder="Bairro"
                     value={state.user.neighborhood}
+                    hasError={state.user.errors.includes('neighborhood')}
                     onChange={e => {
                         handleUpdateUserInfo('neighborhood', e.target.value)
                     }}
@@ -145,6 +152,7 @@ const PaymentTicket = () => {
                     label="Cidade"
                     placeholder="Cidade"
                     value={state.user.city}
+                    hasError={state.user.errors.includes('city')}
                     onChange={e => {
                         handleUpdateUserInfo('city', e.target.value)
                     }}
@@ -157,6 +165,7 @@ const PaymentTicket = () => {
                     label="Estado"
                     placeholder="UF"
                     value={state.user.state}
+                    hasError={state.user.errors.includes('state')}
                     onChange={e => {
                         handleUpdateUserInfo('state', e.target.value)
                     }}

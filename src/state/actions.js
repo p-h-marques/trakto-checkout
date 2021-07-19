@@ -85,7 +85,7 @@ export function updateRecurrence(recurrence){
  * @param {array} errors Campos que possuem erros
  * @returns {object}
  */
-export function updateErrors(type, errors){
+export function updateErrors({type, errors}){
     return {
         type: types.UPDATE_ERRORS,
         payload: {
