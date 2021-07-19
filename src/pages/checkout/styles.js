@@ -21,6 +21,10 @@ export const CheckoutStyles = styled.div`
     }
 
     @media(max-width: 991px){
+        div.container{
+            max-width: 575px;
+        }
+
         div.grid{
             display: flex;
             flex-direction: column;

@@ -15,6 +15,12 @@ export const HeaderStyles = styled.header`
         justify-content: space-between;
     }
 
+    @media(max-width: 991px){
+        div.container{
+            max-width: 575px;
+        }
+    }
+
     div.logo img{
         width: 126px;
     }
