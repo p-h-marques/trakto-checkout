@@ -109,7 +109,7 @@ function numberValidator(value){
  * @param {string} type Identificação do campo a ser validado
  * @returns {function} Função de validação
  */
-export function getValidator(type){
+export function getValidator(type = 'all'){
     const validators = {
         number:         value => cardNumberValidator(value),
         expiration:     value => expirationValidator(value),
@@ -120,6 +120,8 @@ export function getValidator(type){
         streetNumber:   value => numberValidator(value),
         default:        value => value
     }
+
+    if(type === 'all') return validators
 
     return validators[type] || validators['default']
 }

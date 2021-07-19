@@ -77,3 +77,20 @@ export function updateRecurrence(recurrence){
         payload: recurrence
     }
 }
+
+/**
+ * Atualiza os erros do formulário
+ *
+ * @param {string} type Método de pagamento utilizado
+ * @param {array} errors Campos que possuem erros
+ * @returns {object}
+ */
+export function updateErrors(type, errors){
+    return {
+        type: types.UPDATE_ERRORS,
+        payload: {
+            type,
+            newErrors: errors
+        }
+    }
+}

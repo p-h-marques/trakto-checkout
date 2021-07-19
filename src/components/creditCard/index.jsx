@@ -6,7 +6,7 @@ import ImgCard from '../../assets/images/input/card.svg'
 
 import Context from '../../state/Context'
 import * as actions from '../../state/actions'
-import * as validators from '../../utils/validators'
+import * as validators from '../../utils/fieldValidators'
 
 const CreditCard = () => {
     const { state, dispatch } = useContext(Context)

@@ -47,6 +47,17 @@ function reducer(state, action) {
                 }
             }
 
+        case types.UPDATE_ERRORS:
+            return {
+                ...state,
+                [action.payload.type]: {
+                    ...state[action.payload.type],
+                    errors: [
+                        ...action.payload.newErrors
+                    ]
+                }
+            }
+
         default:
             throw new Error()
     }

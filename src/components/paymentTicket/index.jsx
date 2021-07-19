@@ -7,7 +7,7 @@ import Select from '../select'
 import Context from '../../state/Context'
 import * as actions from '../../state/actions'
 import * as requests from '../../utils/requests'
-import * as validators from '../../utils/validators'
+import * as validators from '../../utils/fieldValidators'
 
 const PaymentTicket = () => {
     const { state, dispatch } = useContext(Context)

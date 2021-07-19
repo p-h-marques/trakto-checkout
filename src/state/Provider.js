@@ -15,13 +15,15 @@ export const initialState = {
         complement: '',
         city: '',
         state: 'UF',
-        terms: false
+        terms: false,
+        errors: []
     },
     creditCard: {
         name: '',
         number: '',
         expiration: '',
-        securityCode: ''
+        securityCode: '',
+        errors: []
     },
     plan: {
         name: 'Plano Pro',

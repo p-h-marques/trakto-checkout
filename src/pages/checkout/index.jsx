@@ -9,7 +9,7 @@ const Checkout = () => {
     const {state} = useContext(Context)
 
     useEffect(()=>{
-        console.log(state.plan)
+        console.log(state)
     }, [state])
 
     return (
