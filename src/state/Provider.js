@@ -32,7 +32,8 @@ export const initialState = {
             anual: 150
         },
         recurrence: 'monthly',
-        payment: 'creditCard'
+        payment: 'creditCard',
+        terms: false
     }
 }
 

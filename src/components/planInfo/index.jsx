@@ -58,7 +58,10 @@ const PlanInfo = () => {
 
                     <div className="terms">
                         <label htmlFor="planTerms">
-                            <input type="checkbox" name="planTerms" id="planTerms" />
+                            <input type="checkbox" name="planTerms" id="planTerms"
+                                value={state.plan.terms}
+                                onChange={e => dispatch(actions.updatePlanTerms(e.target.checked))}
+                            />
                             <span>Concordar com os <a>Termos de Uso.</a></span>
                         </label>
 

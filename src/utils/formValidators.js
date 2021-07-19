@@ -80,5 +80,10 @@ export default function handleFormValidation(state){
         }
     }
 
-    console.log('Permitir pagamento!')
+    if(!state.plan.terms) return 'Precisa aceitar os termos!'
+
+    if(state.plan.recurrence === 'monthly' && state.plan.payment === 'paymentTicket')
+        return 'Boleto apenas paga planos anuais!'
+
+    return ('Permitir pagamento!')
 }

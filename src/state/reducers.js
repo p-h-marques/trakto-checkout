@@ -58,6 +58,15 @@ function reducer(state, action) {
                 }
             }
 
+        case types.UPDATE_PLAN_TERMS:
+            return {
+                ...state,
+                plan: {
+                    ...state.plan,
+                    terms: action.payload
+                }
+            }
+
         default:
             throw new Error()
     }

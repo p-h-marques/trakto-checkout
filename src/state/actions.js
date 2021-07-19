@@ -94,3 +94,16 @@ export function updateErrors(type, errors){
         }
     }
 }
+
+/**
+ * Atualiza o status de aceite dos termos do plano
+ *
+ * @param {boolean} isAccepted Status de aceitação dos termos do plano
+ * @returns {object}
+ */
+export function updatePlanTerms(isAccepted){
+    return {
+        type: types.UPDATE_PLAN_TERMS,
+        payload: isAccepted
+    }
+}
