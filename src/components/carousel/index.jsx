@@ -36,7 +36,7 @@ export const Carousel = () => {
                             <CarouselElement
                                 img={slide.img}
                                 text={slide.text}
-                                key={key}
+                                keyEl={key}
                             />
                         </SwiperSlide>
                     ))
