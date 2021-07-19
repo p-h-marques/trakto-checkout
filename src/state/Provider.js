@@ -33,7 +33,11 @@ export const initialState = {
         },
         recurrence: 'monthly',
         payment: 'creditCard',
-        terms: false
+        terms: false,
+        errors: {
+            paymentTicket: false,
+            planTerms: false
+        }
     }
 }
 

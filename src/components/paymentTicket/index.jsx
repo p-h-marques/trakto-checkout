@@ -34,6 +34,12 @@ const PaymentTicket = () => {
                     value={state.user.name}
                     hasError={state.user.errors.includes('name')}
                     onChange={e => {
+                        if(state.user.errors.includes('name')){
+                            dispatch(
+                                actions.removeError('user', 'name', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('name', e.target.value)
                     }}
                 />
@@ -47,6 +53,12 @@ const PaymentTicket = () => {
                     value={state.user.document}
                     hasError={state.user.errors.includes('document')}
                     onChange={e => {
+                        if(state.user.errors.includes('document')){
+                            dispatch(
+                                actions.removeError('user', 'document', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('document', e.target.value)
                     }}
                 />
@@ -60,6 +72,12 @@ const PaymentTicket = () => {
                     value={state.user.phone}
                     hasError={state.user.errors.includes('phone')}
                     onChange={e => {
+                        if(state.user.errors.includes('phone')){
+                            dispatch(
+                                actions.removeError('user', 'phone', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('phone', e.target.value)
                     }}
                 />
@@ -75,6 +93,12 @@ const PaymentTicket = () => {
                     value={state.user.postalCode}
                     hasError={state.user.errors.includes('postalCode')}
                     onChange={async (e) => {
+                        if(state.user.errors.includes('postalCode')){
+                            dispatch(
+                                actions.removeError('user', 'postalCode', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('postalCode', e.target.value)
 
                         if(e.target.value.length === 9){
@@ -103,6 +127,12 @@ const PaymentTicket = () => {
                     value={state.user.street}
                     hasError={state.user.errors.includes('street')}
                     onChange={e => {
+                        if(state.user.errors.includes('street')){
+                            dispatch(
+                                actions.removeError('user', 'street', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('street', e.target.value)
                     }}
                 />
@@ -116,6 +146,12 @@ const PaymentTicket = () => {
                     value={state.user.streetNumber}
                     hasError={state.user.errors.includes('streetNumber')}
                     onChange={e => {
+                        if(state.user.errors.includes('streetNumber')){
+                            dispatch(
+                                actions.removeError('user', 'streetNumber', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('streetNumber', e.target.value)
                     }}
                 />
@@ -129,6 +165,12 @@ const PaymentTicket = () => {
                     value={state.user.neighborhood}
                     hasError={state.user.errors.includes('neighborhood')}
                     onChange={e => {
+                        if(state.user.errors.includes('neighborhood')){
+                            dispatch(
+                                actions.removeError('user', 'neighborhood', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('neighborhood', e.target.value)
                     }}
                 />
@@ -154,6 +196,12 @@ const PaymentTicket = () => {
                     value={state.user.city}
                     hasError={state.user.errors.includes('city')}
                     onChange={e => {
+                        if(state.user.errors.includes('city')){
+                            dispatch(
+                                actions.removeError('user', 'city', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('city', e.target.value)
                     }}
                 />
@@ -167,6 +215,12 @@ const PaymentTicket = () => {
                     value={state.user.state}
                     hasError={state.user.errors.includes('state')}
                     onChange={e => {
+                        if(state.user.errors.includes('state')){
+                            dispatch(
+                                actions.removeError('user', 'state', state.user.errors)
+                            )
+                        }
+
                         handleUpdateUserInfo('state', e.target.value)
                     }}
                 />

@@ -44,7 +44,6 @@ function getRequiredFields(paymentType){
 function getFieldErrors(fields, state){
     const key = state.plan.payment === 'paymentTicket' ? 'user' : 'creditCard'
     const validators = getValidator()
-    console.log(validators)
 
     return fields.filter(field => {
         const value = state[key][field]
@@ -80,10 +79,25 @@ export default function handleFormValidation(state){
         }
     }
 
-    if(!state.plan.terms) return 'Precisa aceitar os termos!'
+    if(!state.plan.terms){
+        return {
+            action: 'updatePlanErrors',
+            args: {
+                hasError: true,
+                type: 'planTerms'
+            }
+        }
+    }
 
-    if(state.plan.recurrence === 'monthly' && state.plan.payment === 'paymentTicket')
-        return 'Boleto apenas paga planos anuais!'
+    if(state.plan.recurrence === 'monthly' && state.plan.payment === 'paymentTicket'){
+        return {
+            action: 'updatePlanErrors',
+            args: {
+                hasError: true,
+                type: 'paymentTicket'
+            }
+        }
+    }
 
     return ('Permitir pagamento!')
 }

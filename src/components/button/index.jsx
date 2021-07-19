@@ -16,9 +16,7 @@ const Button = () => {
     const handlePayment = useCallback(()=>{
         const validation = handleFormValidation(state)
 
-        if(validation.action === 'updateErrors'){
-            dispatch(actions[validation.action]({...validation.args}))
-        }
+        dispatch(actions[validation.action]({...validation.args}))
     }, [state])
 
     return (

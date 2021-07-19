@@ -173,6 +173,17 @@ export const PlanInfoStyles = styled.div`
                     }
                 }
             }
+
+            div.error{
+                border-top: 1px solid ${colors.brand.orange};
+                padding-left: 8px;
+                margin-top: 24px;
+                padding-top: 24px;
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: 800;
+                color: ${colors.brand.orange};
+            }
         }
     }
 `

@@ -33,9 +33,11 @@ const CreditCard = () => {
                     value={state.creditCard.name}
                     hasError={state.creditCard.errors.includes('name')}
                     onChange={e => {
-                        dispatch(
-                            actions.removeError('creditCard', 'name', state.creditCard.errors)
-                        )
+                        if(state.creditCard.errors.includes('name')){
+                            dispatch(
+                                actions.removeError('creditCard', 'name', state.creditCard.errors)
+                            )
+                        }
 
                         handleUpdateCardInfo('name', e.target.value)
                     }}
@@ -51,9 +53,11 @@ const CreditCard = () => {
                     value={state.creditCard.number}
                     hasError={state.creditCard.errors.includes('number')}
                     onChange={e => {
-                        dispatch(
-                            actions.removeError('creditCard', 'number', state.creditCard.errors)
-                        )
+                        if(state.creditCard.errors.includes('number')){
+                            dispatch(
+                                actions.removeError('creditCard', 'number', state.creditCard.errors)
+                            )
+                        }
 
                         handleUpdateCardInfo('number', e.target.value)
                     }}
@@ -68,9 +72,11 @@ const CreditCard = () => {
                     value={state.creditCard.expiration}
                     hasError={state.creditCard.errors.includes('expiration')}
                     onChange={e => {
-                        dispatch(
-                            actions.removeError('creditCard', 'expiration', state.creditCard.errors)
-                        )
+                        if(state.creditCard.errors.includes('expiration')){
+                            dispatch(
+                                actions.removeError('creditCard', 'expiration', state.creditCard.errors)
+                            )
+                        }
 
                         handleUpdateCardInfo('expiration', e.target.value)
                     }}
@@ -85,9 +91,11 @@ const CreditCard = () => {
                     value={state.creditCard.securityCode}
                     hasError={state.creditCard.errors.includes('securityCode')}
                     onChange={e => {
-                        dispatch(
-                            actions.removeError('creditCard', 'securityCode', state.creditCard.errors)
-                        )
+                        if(state.creditCard.errors.includes('securityCode')){
+                            dispatch(
+                                actions.removeError('creditCard', 'securityCode', state.creditCard.errors)
+                            )
+                        }
 
                         handleUpdateCardInfo('securityCode', e.target.value)
                     }}

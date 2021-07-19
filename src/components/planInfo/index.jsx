@@ -39,7 +39,13 @@ const PlanInfo = () => {
                     <div className="setup">
                         <select name="recurrence" id="recurrence"
                             value={state.plan.recurrence}
-                            onChange={(e)=>{dispatch(actions.updateRecurrence(e.target.value))}}
+                            onChange={(e)=>{
+                                dispatch(actions.updateRecurrence(e.target.value))
+                                dispatch(actions.updatePlanErrors({
+                                    hasError: false,
+                                    type: 'paymentTicket'
+                                }))
+                            }}
                         >
                             <option value="monthly">Mensal</option>
                             <option value="anual">Anual</option>
@@ -60,10 +66,31 @@ const PlanInfo = () => {
                         <label htmlFor="planTerms">
                             <input type="checkbox" name="planTerms" id="planTerms"
                                 value={state.plan.terms}
-                                onChange={e => dispatch(actions.updatePlanTerms(e.target.checked))}
+                                onChange={e =>{
+                                    dispatch(actions.updatePlanTerms(e.target.checked))
+                                    dispatch(actions.updatePlanErrors({
+                                        hasError: false,
+                                        type: 'planTerms'
+                                    }))
+                                }}
                             />
                             <span>Concordar com os <a>Termos de Uso.</a></span>
                         </label>
+
+                        {
+                            (state.plan.errors.paymentTicket || state.plan.errors.planTerms) && (
+                                <div className="error">
+                                    {
+                                        state.plan.errors.paymentTicket &&
+                                        'O boleto só pode ser usado como forma de pagamento do plano Anual!'
+                                    }
+                                    {
+                                        state.plan.errors.planTerms &&
+                                        'Os termos de uso acima precisam ser aceitos antes de continuar.'
+                                    }
+                                </div>
+                            )
+                        }
 
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import * as types from './types'
+import { initialState } from './Provider'
 
 function reducer(state, action) {
     switch (action.type) {
@@ -64,6 +65,18 @@ function reducer(state, action) {
                 plan: {
                     ...state.plan,
                     terms: action.payload
+                }
+            }
+
+        case types.UPDATE_PLAN_ERRORS:
+            return {
+                ...state,
+                plan: {
+                    ...state.plan,
+                    errors: {
+                        ...initialState.plan.errors,
+                        ...action.payload
+                    }
                 }
             }
 

@@ -130,3 +130,20 @@ export function removeError(type, error, previous){
         }
     }
 }
+
+/**
+ * Atualiza a lista de erros do plano com base
+ * no condicional e tipo passados
+ *
+ * @param {boolean} hasError Presença de erro no tipo em questão
+ * @param {string} type Tipo de erro a ser alterado
+ * @returns {object}
+ */
+export function updatePlanErrors({hasError, type}){
+    return {
+        type: types.UPDATE_PLAN_ERRORS,
+        payload: {
+            [type]: hasError
+        }
+    }
+}
