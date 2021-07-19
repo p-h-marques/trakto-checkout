@@ -1,3 +1,5 @@
+import { getValidator } from './fieldValidators'
+
 /**
  * Obtém a lista de campos obrigatórios para
  * determinado tipo de pagamento
@@ -41,8 +43,18 @@ function getRequiredFields(paymentType){
  */
 function getFieldErrors(fields, state){
     const key = state.plan.payment === 'paymentTicket' ? 'user' : 'creditCard'
+    const validators = getValidator()
+    console.log(validators)
 
-    return fields.filter(field => state[key][field] === '' || !state[key][field])
+    return fields.filter(field => {
+        const value = state[key][field]
+
+        const validateFieldIntegrity =
+            Object.prototype.hasOwnProperty.call(validators, field) &&
+            !validators[field](value, 'validate')
+
+        return value === '' || !value || validateFieldIntegrity
+    })
 }
 
 /**
@@ -54,9 +66,12 @@ function getFieldErrors(fields, state){
  * @returns {object}
  */
 export default function handleFormValidation(state){
-    const requiredFields = getRequiredFields(state.plan.payment)
-    const errors = getFieldErrors(requiredFields, state)
-    const type = state.plan.payment === 'paymentTicket' ? 'user' : 'creditCard'
+    const requiredFields    = getRequiredFields(state.plan.payment)
+    const errors            = getFieldErrors(requiredFields, state)
+
+    const type = state.plan.payment === 'paymentTicket'
+        ? 'user'
+        : 'creditCard'
 
     if(errors.length > 0){
         return {

@@ -4,8 +4,11 @@
  * @param {string} value Valor a ser validado
  * @returns Valor após validação
  */
-function cardNumberValidator(value){
+function cardNumberValidator(value, type = 'format'){
     value = value.replace(/\D/g,'')
+
+    if(type === 'validate') return value.length === 16
+
     value = value.replace(/(\d{4})/g, '$1.')
     value = value.replace(/\.$/, '')
     value = value.substring(0, 19)
@@ -19,10 +22,20 @@ function cardNumberValidator(value){
  * @param {string} value Valor a ser validado
  * @returns Valor após validação
  */
-function expirationValidator(value){
+function expirationValidator(value, type = 'format'){
+    if(type === 'validate'){
+        if(value.length !== 5) return false
+
+        const split = value.split('/')
+
+        if(split[0] > 12) return false
+
+        return true
+    }
+
     value = value.replace(/\D/g,'')
-    value = value.replace(/(\d{2})/g, '$1.')
-    value = value.replace(/\.$/, '')
+    value = value.replace(/(\d{2})/g, '$1/')
+    value = value.replace(/\/$/, '')
     value = value.substring(0, 5)
 
     return value
@@ -34,8 +47,11 @@ function expirationValidator(value){
  * @param {string} value Valor a ser validado
  * @returns Valor após validação
  */
-function securityCodeValidator(value){
+function securityCodeValidator(value, type = 'format'){
     value = value.replace(/\D/g,'')
+
+    if(type === 'validate') return value.length ===3
+
     value = value.substring(0, 3)
 
     return value
@@ -48,8 +64,10 @@ function securityCodeValidator(value){
  * @param {string} value Documento a ser formatado
  * @returns Valor após validação
  */
-function documentValidator(value){
+function documentValidator(value, type = 'format'){
     value = value.replace(/\D/g,'')
+
+    if(type === 'validate') return value.length === 11 || value.length === 14
 
     value.length <= 11
         ? value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,'$1.$2.$3-$4')
@@ -66,8 +84,11 @@ function documentValidator(value){
  * @param {string} value Telefone a ser formatado
  * @returns Valor após validação
  */
-function phoneValidator(value){
+function phoneValidator(value, type = 'format'){
     value = value.replace(/\D/g,'')
+
+    if(type === 'validate') return value.length === 11 || value.length === 10
+
     value = value.substring(0, 11)
 
     value.length === 11
@@ -83,8 +104,11 @@ function phoneValidator(value){
  * @param {string} value CEP a ser formatado
  * @returns Valor após validação
  */
-function postalCodeValidator(value){
+function postalCodeValidator(value, type = 'format'){
     value = value.replace(/\D/g,'')
+
+    if(type === 'validate') return value.length === 8
+
     value = value.replace(/(\d{5})/g, '$1-')
     value = value.replace(/-$/, '')
     value = value.substring(0, 9)
@@ -98,8 +122,12 @@ function postalCodeValidator(value){
  * @param {string} value Valor a ser filtrado
  * @returns Apenas números
  */
-function numberValidator(value){
-    return value.replace(/\D/g,'')
+function numberValidator(value, type = 'format'){
+    value = value.replace(/\D/g,'')
+
+    if(type === 'validate') return value.length > 0
+
+    return value
 }
 
 /**
@@ -111,13 +139,13 @@ function numberValidator(value){
  */
 export function getValidator(type = 'all'){
     const validators = {
-        number:         value => cardNumberValidator(value),
-        expiration:     value => expirationValidator(value),
-        securityCode:   value => securityCodeValidator(value),
-        document:       value => documentValidator(value),
-        phone:          value => phoneValidator(value),
-        postalCode:     value => postalCodeValidator(value),
-        streetNumber:   value => numberValidator(value),
+        number:         (value, type = 'format') => cardNumberValidator(value, type),
+        expiration:     (value, type = 'format') => expirationValidator(value, type),
+        securityCode:   (value, type = 'format') => securityCodeValidator(value, type),
+        document:       (value, type = 'format') => documentValidator(value, type),
+        phone:          (value, type = 'format') => phoneValidator(value, type),
+        postalCode:     (value, type = 'format') => postalCodeValidator(value, type),
+        streetNumber:   (value, type = 'format') => numberValidator(value, type),
         default:        value => value
     }
 
