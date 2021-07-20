@@ -1,4 +1,4 @@
-# Template de projeto
+# Trakto - Checkout
 
 Olá! Aqui é o Pedro, e esse repositório contém o desenvolvimento de uma tela de checkout & confirmação de pagamento, proposta pelo processo seletivo da [Trakto!](https://www.trakto.io) Para evoluir com a demanda, utilizei os seguintes tópicos:
 
@@ -22,12 +22,6 @@ Caso você tenha problemas com as quebras de linha do Windows, o comando abaixo 
 
 ```bash
 npm run lint
-```
-
-E claro, pra executar os testes no Cypress, você pode usar esse comando:
-
-```bash
-npm run test
 ```
 
 ## Features
@@ -60,7 +54,7 @@ Durante o desenvolvimento do teste, viabilizei algumas soluções a nível de c�
 
 Para centralizar as informações importantes da aplicação, o objeto com o estado global da aplicação foi estruturado da seguinte forma:
 
-```
+```js
 export const initialState = {
     user: {
         name: '',
@@ -105,7 +99,7 @@ export const initialState = {
 
 Para viabilizar o carrossel de imagens na página de confirmação de compras, utilizei o [Swiper](https://swiperjs.com/react), cuja formatação dentro do componente ficou da seguinte forma:
 
-```
+```js
 return (
     <CarouselStyles>
         <Swiper
@@ -136,7 +130,7 @@ return (
 
 Para organizar as funções que faziam as validações dos campos digitados, fiz uma função que retorna a função específica de validação conforme um tipo desejado. Isso ajudou a centralizar a obtenção dos "Validators", e também a retornar uma função "vazia" caso o campo desejado não precisasse de validação.
 
-```
+```js
 /**
  * Retorna uma função de validação conforme
  * o tipo de campo passado
@@ -164,7 +158,7 @@ export function getValidator(type = 'all'){
 
 E, no ato de submissão do formulário, essa função é utilizada para fornecer as validações específicas:
 
-```
+```js
 /**
  * Verifica os campos obrigatórios conforme
  * o método de pagamento e retorna um array
