@@ -55,11 +55,17 @@ export const PlanInfoStyles = styled.div`
             gap: 16px;
 
             div.icon{
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 53px;
                 height: 53px;
                 border-radius: 4px;
                 background-color: ${colors.neutral.light};
+
+                img{
+                    height: 32px;
+                }
             }
 
             div.infos{

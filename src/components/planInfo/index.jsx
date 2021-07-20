@@ -5,6 +5,8 @@ import {formatingValue} from '../../utils/formats'
 import Context from '../../state/Context'
 import * as actions from '../../state/actions'
 
+import ImgPlan from '../../assets/images/misc/premium.svg'
+
 const PlanInfo = () => {
     const {state, dispatch} = useContext(Context)
 
@@ -22,7 +24,9 @@ const PlanInfo = () => {
                     </div>
 
                     <div className="plan">
-                        <div className="icon"></div>
+                        <div className="icon">
+                            <img src={ImgPlan} alt="Pro" />
+                        </div>
                         <div className="infos">
                             <p>Plano Pro</p>
                             <p>Renovado anualmente</p>
