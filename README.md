@@ -8,7 +8,7 @@ Olá! Aqui é o Pedro, e esse repositório contém o desenvolvimento de uma tela
 - **context API** para tratar as informações de cursos, filtros e exibições
 - **eslint & prettier** para manter o padrão de código consistente;
 
-Se quiser visualizar o projeto em produção, ele está acessível [nesse link!](https://google.com.br/)
+Se quiser visualizar o projeto em produção, ele está acessível [nesse link!](https://trakto-checkout.web.app/)
 
 ## Rodando o projeto
 
